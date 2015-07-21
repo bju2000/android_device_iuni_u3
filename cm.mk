@@ -15,31 +15,31 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from bacon device
-$(call inherit-product, device/oneplus/bacon/bacon.mk)
+# Inherit from u3 device
+$(call inherit-product, device/iuni/u3/u3.mk)
 
 # Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+#$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_NAME := cm_bacon
-PRODUCT_DEVICE := bacon
-PRODUCT_MANUFACTURER := OnePlus
-PRODUCT_MODEL := A0001
+PRODUCT_NAME := cm_u3
+PRODUCT_DEVICE := u3
+PRODUCT_MANUFACTURER := IUNI
+PRODUCT_MODEL := U3
 
-PRODUCT_GMS_CLIENTID_BASE := android-oneplus
+PRODUCT_GMS_CLIENTID_BASE := android-iuni
 
-PRODUCT_BRAND := oneplus
-TARGET_VENDOR := oneplus
-TARGET_VENDOR_PRODUCT_NAME := bacon
-TARGET_VENDOR_DEVICE_NAME := A0001
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=A0001 PRODUCT_NAME=bacon
+PRODUCT_BRAND := iuni
+TARGET_VENDOR := iuni
+TARGET_VENDOR_PRODUCT_NAME := u3
+TARGET_VENDOR_DEVICE_NAME := U3
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=U3 PRODUCT_NAME=u3
 
 ## Use the latest approved GMS identifiers unless running a signed build
 ifneq ($(SIGN_BUILD),true)
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=oneplus/bacon/A0001:5.0.2/LRX22G/YNG1TAS2I3:user/release-keys \
-    PRIVATE_BUILD_DESC="bacon-user 5.0.2 LRX22G YNG1TAS2I3 release-keys"
+    BUILD_FINGERPRINT=iuni/u3/U3:5.0.2/LRX22G/YNG1TAS2I3:user/release-keys \
+    PRIVATE_BUILD_DESC="u3-user 5.0.2 LRX22G YNG1TAS2I3 release-keys"
 endif

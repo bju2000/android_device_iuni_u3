@@ -1,5 +1,5 @@
 # Camera
-lib/hw/camera.vendor.bacon.so
+lib/hw/camera.vendor.msm8974.so
 vendor/lib/libchromatix_imx214_common.so
 vendor/lib/libchromatix_imx214_default_video.so
 vendor/lib/libchromatix_imx214_hfr_120.so
@@ -21,4 +21,4 @@ vendor/lib/libchromatix_ov5648_zsl.so
 vendor/lib/libchromatix_ov5648_zsl_fb.so
 
 # NFC
-etc/firmware/libpn547_fw.so:vendor/firmware/libpn547_fw.so
+#etc/firmware/libpn547_fw.so:vendor/firmware/libpn547_fw.so

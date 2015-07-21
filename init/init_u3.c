@@ -43,11 +43,11 @@ static void import_kernel_nv(char *name, int for_emulator)
     *value++ = 0;
     if (name_len == 0) return;
 
-    if (!strcmp(name,"oppo.rf_version")) {
-        property_set("ro.oppo.rf_version", value);
+    if (!strcmp(name,"iuni.rf_version")) {
+        property_set("ro.iuni.rf_version", value);
     }
-    else if (!strcmp(name,"oppo.pcb_version")) {
-        property_set("ro.oppo.pcb_version", value);
+    else if (!strcmp(name,"iuni.pcb_version")) {
+        property_set("ro.iuni.pcb_version", value);
     }
 }
 

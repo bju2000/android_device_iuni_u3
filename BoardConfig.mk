@@ -15,45 +15,43 @@
 #
 
 # Inherit from MSM8974 common
--include device/oppo/msm8974-common/BoardConfigCommon.mk
+-include device/iuni/msm8974-common/BoardConfigCommon.mk
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_bacon_defconfig
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=bacon user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
+TARGET_KERNEL_CONFIG := cyanogenmod_u3_defconfig
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=u3 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oneplus/bacon/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/iuni/u3/bluetooth
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
-COMMON_GLOBAL_CFLAGS += -DOPPO_CAMERA_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DIUNI_CAMERA_HARDWARE
 
 # Filesystem
-BOARD_BOOTIMAGE_PARTITION_SIZE     := 16777216
-BOARD_CACHEIMAGE_PARTITION_SIZE    := 536870912
-BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
-BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1388314624
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 13271448576
-BOARD_USERDATAEXTRAIMAGE_PARTITION_SIZE := 59914792960
-BOARD_USERDATAEXTRAIMAGE_PARTITION_NAME := 64G
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 22020096
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 422576128
+BOARD_PERSISTIMAGE_PARTITION_SIZE  := 35232153
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 22020096
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1126170624
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 30605836288
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/oneplus/bacon/rootdir/etc/fstab.bacon
+TARGET_RECOVERY_FSTAB := device/iuni/u3/rootdir/etc/fstab.u3
 
-TARGET_OTA_ASSERT_DEVICE := bacon,A0001
+TARGET_OTA_ASSERT_DEVICE := u3,U3
 
-TARGET_INIT_VENDOR_LIB := libinit_bacon
+TARGET_INIT_VENDOR_LIB := libinit_u3
 
 TARGET_WCNSS_MAC_PREFIX := e8bba8
 
 # Workaround for factory issue
 BOARD_VOLD_CRYPTFS_MIGRATE := true
 
-BOARD_NFC_CHIPSET := pn547
+#BOARD_NFC_CHIPSET := pn547
 
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
 AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE := true
 
 # inherit from the proprietary version
--include vendor/oneplus/bacon/BoardConfigVendor.mk
+-include vendor/iuni/u3/BoardConfigVendor.mk
