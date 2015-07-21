@@ -1,24 +1,20 @@
 # Camera
-lib/hw/camera.vendor.msm8974.so
-vendor/lib/libchromatix_imx214_common.so
-vendor/lib/libchromatix_imx214_default_video.so
-vendor/lib/libchromatix_imx214_hfr_120.so
-vendor/lib/libchromatix_imx214_hfr_60.so
-vendor/lib/libchromatix_imx214_liveshot.so
-vendor/lib/libchromatix_imx214_preview.so
-vendor/lib/libchromatix_imx214_preview_binning.so
-vendor/lib/libchromatix_imx214_snapshot.so
-vendor/lib/libchromatix_imx214_snapshot_hdr.so
-vendor/lib/libchromatix_imx214_video_binning.so
-vendor/lib/libchromatix_imx214_video_cmcc.so
-vendor/lib/libchromatix_imx214_video_hdr.so
-vendor/lib/libchromatix_ov5648_common.so
-vendor/lib/libchromatix_ov5648_default_video.so
-vendor/lib/libchromatix_ov5648_preview.so
-vendor/lib/libchromatix_ov5648_preview_fb.so
-vendor/lib/libchromatix_ov5648_video_cmcc.so
-vendor/lib/libchromatix_ov5648_zsl.so
-vendor/lib/libchromatix_ov5648_zsl_fb.so
+#iuni uses imx135 and ov5648  to be confirmed
+lib/hw/camera.msm8974.so 
+vendor/lib/libchromatix_imx135_common.so
+vendor/lib/libchromatix_imx135_default_video.so
+vendor/lib/libchromatix_imx135_hfr_120.so
+vendor/lib/libchromatix_imx135_hfr_90.so
+vendor/lib/libchromatix_imx135_hfr_60.so
+vendor/lib/libchromatix_imx135_preview.so
+vendor/lib/libchromatix_imx135_snapshot.so
+vendor/lib/libchromatix_imx135_snapshot.so
+vendor/lib/libchromatix_imx135_video_hd.so
+vendor/lib/libchromatix_ov5648_oty5f03_common.so
+vendor/lib/libchromatix_ov5648_oty5f03_default_video.so
+vendor/lib/libchromatix_ov5648_oty5f03_preview.so
+vendor/lib/libchromatix_ov5648_oty5f03_snapshot.so
+vendor/lib/libchromatix_ov5648_oty5f03_zsl.so
 
-# NFC
+# NFC no nfc hw to be confirmed
 #etc/firmware/libpn547_fw.so:vendor/firmware/libpn547_fw.so
