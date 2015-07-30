@@ -19,9 +19,15 @@
 
 # Kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_u3_defconfig
-#BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 
-androidboot.bootdevice=msm_sdcc.1
+#BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
+
+# to be checked ,force special dt.img
+#BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x05000000 --dt device/lge/zee/dt.img --tags_offset 0x04800000
+#TARGET_PREBUILT_KERNEL := device/lge/zee/kernel ## For initial recovery builds
+#BOARD_KERNEL_SEPARATED_DT := ## For prebuilt kernel use to bypass g2-common
+#BOARD_CUSTOM_BOOTIMG_MK := ## For prebuilt kernel use to bypass g2-common
+
 
 # Use trim command for SSD/EMMC , to be tested in case that cwm gives error at flash
 #BOARD_SUPPRESS_EMMC_WIPE := true
