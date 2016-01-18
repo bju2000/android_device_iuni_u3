@@ -18,8 +18,14 @@ ifneq ($(QCPATH),)
 $(call inherit-product-if-exists, $(QCPATH)/common/config/device-vendor.mk)
 endif
 
+<<<<<<< HEAD:bacon.mk
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay vendor/extra/overlays/phone-1080p
+=======
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1440
+TARGET_SCREEN_WIDTH := 2560
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53:u3.mk
 
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -30,6 +36,7 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+<<<<<<< HEAD:bacon.mk
     libinit_bacon \
     fstab.bacon \
     init.bacon.rc \
@@ -38,6 +45,13 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
     ueventd.bacon.rc
+=======
+    libinit_u3 \
+    fstab.u3 \
+    init.u3.rc \
+    init.qcom.usb.rc \
+    ueventd.u3.rc
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53:u3.mk
 
 ifeq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PACKAGES += \
@@ -66,6 +80,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
+<<<<<<< HEAD:bacon.mk
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
@@ -202,6 +217,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
+=======
+# NFC packages
+#PRODUCT_PACKAGES += \
+#    NfcNci \
+#    Tag \
+#    nfc_nci.pn54x.default \
+#    com.android.nfc_extras
+
+# NFC access control + feature files + configuration
+#PRODUCT_COPY_FILES += \
+#    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+#    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+#    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+#    $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+#    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53:u3.mk
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -242,12 +273,13 @@ endif
 
 # Recovery
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(LOCAL_PATH)/bacon
+    $(LOCAL_PATH)/u3
 
 # Thermal config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine-8974.conf
 
+<<<<<<< HEAD:bacon.mk
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
@@ -257,6 +289,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+=======
+# Fuuuuu
+PRODUCT_PACKAGES += camera.u3
+
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53:u3.mk
 
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
@@ -311,12 +351,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=0 \
     ro.telephony.default_network=9
 
+<<<<<<< HEAD:bacon.mk
 # Call the proprietary setup
 $(call inherit-product-if-exists, vendor/oneplus/bacon/bacon-vendor.mk)
+=======
+# call the proprietary setup
+$(call inherit-product-if-exists, vendor/iuni/u3/u3-vendor.mk)
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53:u3.mk
 
 ifneq ($(QCPATH),)
 $(call inherit-product-if-exists, $(QCPATH)/prebuilt_HY11/target/product/msm8974/prebuilt.mk)
 endif
 
+<<<<<<< HEAD:bacon.mk
 # Inherit from oppo-common
 $(call inherit-product, device/oppo/common/common.mk)
+=======
+# Inherit from msm8974-common
+$(call inherit-product, device/iuni/msm8974-common/msm8974.mk)
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53:u3.mk

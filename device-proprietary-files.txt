@@ -1,0 +1,20 @@
+# Camera
+#iuni uses imx135 and ov5648  to be confirmed
+lib/hw/camera.msm8974.so 
+vendor/lib/libchromatix_imx135_common.so
+vendor/lib/libchromatix_imx135_default_video.so
+vendor/lib/libchromatix_imx135_hfr_120.so
+vendor/lib/libchromatix_imx135_hfr_90.so
+vendor/lib/libchromatix_imx135_hfr_60.so
+vendor/lib/libchromatix_imx135_preview.so
+vendor/lib/libchromatix_imx135_snapshot.so
+vendor/lib/libchromatix_imx135_snapshot.so
+vendor/lib/libchromatix_imx135_video_hd.so
+vendor/lib/libchromatix_ov5648_oty5f03_common.so
+vendor/lib/libchromatix_ov5648_oty5f03_default_video.so
+vendor/lib/libchromatix_ov5648_oty5f03_preview.so
+vendor/lib/libchromatix_ov5648_oty5f03_snapshot.so
+vendor/lib/libchromatix_ov5648_oty5f03_zsl.so
+
+# NFC no nfc hw to be confirmed
+#etc/firmware/libpn547_fw.so:vendor/firmware/libpn547_fw.so

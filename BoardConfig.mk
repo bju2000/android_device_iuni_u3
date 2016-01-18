@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
+<<<<<<< HEAD
 # inherit from Oppo common
 -include device/oppo/common/BoardConfigCommon.mk
 
@@ -77,10 +78,32 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_SMD_TTY := true
+=======
+# Inherit from MSM8974 common
+-include device/iuni/msm8974-common/BoardConfigCommon.mk
+
+# Kernel
+TARGET_KERNEL_CONFIG := cyanogenmod_u3_defconfig
+#BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
+
+# to be checked ,force special dt.img
+#BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x05000000 --dt device/lge/zee/dt.img --tags_offset 0x04800000
+#TARGET_PREBUILT_KERNEL := device/lge/zee/kernel ## For initial recovery builds
+#BOARD_KERNEL_SEPARATED_DT := ## For prebuilt kernel use to bypass g2-common
+#BOARD_CUSTOM_BOOTIMG_MK := ## For prebuilt kernel use to bypass g2-common
+
+
+# Use trim command for SSD/EMMC , to be tested in case that cwm gives error at flash
+#BOARD_SUPPRESS_EMMC_WIPE := true
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/iuni/u3/bluetooth
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
-COMMON_GLOBAL_CFLAGS += -DOPPO_CAMERA_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DIUNI_CAMERA_HARDWARE
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
@@ -105,6 +128,7 @@ endif
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Filesystem
+<<<<<<< HEAD
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 16777216
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -129,6 +153,21 @@ COMMON_GLOBAL_CPPFLAGS += -DNO_SECURE_DISCARD -DUSE_RIL_VERSION_10
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
+=======
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 20971520
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 402653184
+BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 20971520
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1073741824
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 29239515136
+
+# Recovery
+TARGET_RECOVERY_FSTAB := device/iuni/u3/rootdir/etc/fstab.u3
+
+TARGET_OTA_ASSERT_DEVICE := u3,U3
+
+TARGET_INIT_VENDOR_LIB := libinit_u3
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53
 
 # GPS
 TARGET_GPS_HAL_PATH := $(PLATFORM_PATH)/gps
@@ -145,6 +184,7 @@ TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 
+<<<<<<< HEAD
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_bacon
 
@@ -153,6 +193,9 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # NFC
 BOARD_NFC_CHIPSET := pn547
+=======
+#BOARD_NFC_CHIPSET := pn547
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53
 
 # Protobuf-c
 PROTOBUF_SUPPORTED := true
@@ -193,6 +236,7 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
 # inherit from the proprietary version
+<<<<<<< HEAD
 ifneq ($(QCPATH),)
 -include $(QCPATH)/common/msm8974/BoardConfigVendor.mk
 
@@ -202,3 +246,6 @@ endif
 endif
 
 -include vendor/oneplus/bacon/BoardConfigVendor.mk
+=======
+-include vendor/iuni/u3/BoardConfigVendor.mk
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53

@@ -3,6 +3,7 @@
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 
+<<<<<<< HEAD
 (cat << EOF) > $MAKEFILE
 # Copyright (C) 2015 The CyanogenMod Project
 #
@@ -370,3 +371,8 @@ endif
 endif
 
 EOF
+=======
+export VENDOR=iuni
+export DEVICE=u3
+./../../iuni/msm8974-common/setup-makefiles.sh $@
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53
