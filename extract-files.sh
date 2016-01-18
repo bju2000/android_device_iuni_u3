@@ -4,6 +4,7 @@
 export DEVICE=bacon
 export VENDOR=oneplus
 
+<<<<<<< HEAD
 if [ $# -eq 0 ]; then
   SRC=adb
 else
@@ -59,3 +60,9 @@ extract ../../$VENDOR/$DEVICE/proprietary-files-qc.txt $BASE
 extract ../../$VENDOR/$DEVICE/proprietary-files.txt $BASE
 
 ./setup-makefiles.sh
+=======
+FP=$(cd ${0%/*} && pwd -P)
+export VENDOR=$(basename $(dirname $FP))
+export DEVICE=$(basename $FP)
+./../../iuni/msm8974-common/extract-files.sh $@
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53

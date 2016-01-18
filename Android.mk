@@ -16,7 +16,11 @@
 
 LOCAL_PATH := $(call my-dir)
 
+<<<<<<< HEAD
 ifneq ($(filter bacon,$(TARGET_DEVICE)),)
+=======
+ifeq ($(TARGET_DEVICE),u3)
+>>>>>>> 5f2a89b08e778d0b037e12e33c423900f1980f53
 
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
